@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sign Up</title>
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (username === "" || email === "" || password === "") {
+          alert("All fields must be filled out");
+          return false;
+        }
+
+        if (!isValidEmail(email)) {
+          alert("Invalid email address");
+          return false;
+        }
+
+        return true;
+      }
+
+      function isValidEmail(email) {
+        // Basic email validation
+        var emailPattern = /^\S+@\S+\.\S+$/;
+        return emailPattern.test(email);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <!-- Sign Up Content Goes Here -->
+    <div class="signup-container">
+      <h1>Sign Up</h1>
+
+      <form onsubmit="return validateForm()">
+        <!-- Form fields for sign up (arranged vertically) -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button id="signUpButton" type="submit">Sign Up</button>
+      </form>
+      <p>Already registered? <a href="login.html">Login here</a></p>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/load-content.js"></script>
+  </body>
+</html>
