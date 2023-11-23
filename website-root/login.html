@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Login</title>
+    <script>
+      function validateForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email === "" || password === "") {
+          alert("Please fill in both email and password fields.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <!-- Login Content Goes Here -->
+    <div class="signup-container">
+      <h1>Login</h1>
+
+      <form onsubmit="return validateForm()">
+        <!-- Form fields for login (arranged vertically) -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button id="loginButton" type="submit">Login</button>
+      </form>
+
+      <!--still need to add the logic which will check whether the user exists or not and whether he entered the valid password-->
+      <p>Not registered yet? <a href="signup.html">Sign up here</a></p>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/load-content.js"></script>
+  </body>
+</html>
